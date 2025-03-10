@@ -26,7 +26,7 @@ public:
         for(auto& word:words){
             ans += word;
             if(ans == s) return true;
-            if(ans.length()>s.length()) return false;
+            // if(ans.length()>s.length()) return false;
         }
         return false;
     }
