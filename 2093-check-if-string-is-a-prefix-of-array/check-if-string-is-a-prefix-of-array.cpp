@@ -1,8 +1,8 @@
-/*
+
 class Solution {
 public:
     bool isPrefixString(string s, vector<string>& words) {
-        string answer = " ";
+        string answer = "";
         int n = words.size();
         for(int i = 0; i<n; i++)
         {
@@ -11,13 +11,13 @@ public:
                 return true;
                 break;
             }
-            if(answer.length()>s.length()) return false;
+            
         }
         return false;
     }
 };
-*/
 
+/*
 class Solution {
 public:
     bool isPrefixString(string s, vector<string>& words) {
@@ -26,8 +26,9 @@ public:
         for(auto& word:words){
             ans += word;
             if(ans == s) return true;
-            // if(ans.length()>s.length()) return false;
+            
         }
         return false;
     }
 };
+*/
