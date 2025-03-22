@@ -1,3 +1,4 @@
+/*
 class Solution {
 public:
     int primePalindrome(int N) {
@@ -85,3 +86,46 @@ public:
         return *lower_bound(tab.begin(), tab.end(), N);
     }
 };
+*/
+
+class Solution {
+private:
+    bool ispalindrom(int num){
+        int num2 = num;
+        int result = 0;
+        while(num){
+            int last = num%10;
+            result = result *10 + last;
+            num = num/10;
+        }
+        return num2==result;
+    }
+private:
+    bool isprime(int num){
+    if (num < 2) {
+        return false;
+    }
+    for (int i = 2; i * i <= num; ++i) {
+        if (num % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+private:
+    int issues(int num){
+        if(ispalindrom(num) && isprime(num)){
+            return num;
+        }
+        return issues(num+1);
+    }
+public:
+    int primePalindrome(int num) {
+        if(1e7<=num && num<=1e8){
+            return 100030001;
+        }
+        int ans = issues(num);
+        return ans;
+        }
+    };
